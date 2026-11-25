@@ -1,0 +1,113 @@
+# waybar: bottom bar layout and modules (style in style.css)
+{ ... }:
+{
+  programs.waybar = {
+    enable = true;
+    style = ./style.css;
+    settings = {
+      mainBar = {
+        layer = "top";
+        position = "bottom";
+        height = 32;
+        modules-left = [ "hyprland/window" ];
+        modules-center = [ "hyprland/workspaces" ];
+        modules-right = [
+          "tray"
+          "memory"
+          "backlight"
+          "pulseaudio"
+          "battery"
+          "clock"
+        ];
+        "hyprland/workspaces" = {
+          disable-scroll = true;
+          show-special = true;
+          special-visible-only = true;
+          all-outputs = false;
+          format = "{icon}";
+          format-icons = {
+            "1" = "1";
+            "2" = "2";
+            "3" = "3";
+            "4" = "4";
+            "5" = "5";
+            "6" = "6";
+            "7" = "7";
+            "8" = "8";
+            "9" = "9";
+            "10" = "0";
+          };
+        };
+
+        "tray" = {
+          icon-size = 14;
+          spacing = 4;
+        };
+
+        "memory" = {
+          format = "  {used:0.2f}G ";
+        };
+
+        "backlight" = {
+          format = " {icon} {percent}% ";
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
+        };
+
+        "pulseaudio" = {
+          format = "{icon} {volume}% {format_source}";
+          format-bluetooth = "{icon} {volume}%  {format_source}";
+          format-muted = " {format_source}";
+          # mic (source) part:
+          format-source = " {volume}%";
+          format-source-muted = "";
+
+          format-icons = {
+            "headphones" = "";
+            "phone" = "";
+            "car" = "";
+            "default" = [
+              ""
+              ""
+            ];
+            "effect_input.eq" = "󰺢";
+
+          };
+          on-click = "pavucontrol";
+        };
+
+        "battery" = {
+          states = {
+            warning = 30;
+            critical = 5;
+          };
+
+          format = "{icon} {capacity}%";
+          format-charging = " {capacity}%";
+          format-alt = "{icon} {time}";
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
+        };
+
+        "clock" = {
+          format = "{:%I:%M %p}";
+          format-alt = "{:%A, %d %b %y at %I:%M %p}";
+        };
+      };
+    };
+  };
+}
