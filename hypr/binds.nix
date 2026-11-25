@@ -18,6 +18,7 @@
       "$mainMod,       X, exec, cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"
       "$mainMod,       Q, killactive,"
       "$mainMod SHIFT, Q, exit,"
+      "$mainMod, Escape, exec, loginctl lock-session"
       "$mainMod SHIFT, P, pseudo,"
       "$mainMod,       space, togglefloating,"
       "$mainMod,       O, layoutmsg, togglesplit"

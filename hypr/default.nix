@@ -118,6 +118,9 @@
 
       misc = {
         force_default_wallpaper = 0;
+        # launched directly by greetd, not via start-hyprland: its watchdog
+        # restarts a crashed session unlocked (safe mode), bypassing hyprlock
+        disable_watchdog_warning = true;
         disable_hyprland_logo = true;
       };
 

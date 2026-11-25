@@ -10,6 +10,7 @@ much everything.
 What's in here:
 
 - `hypr/` - Hyprland config and keybinds
+- `hyprlock.nix`, `hypridle.nix` - lock screen, and locking when idle or on suspend
 - `waybar/` - the bar and its CSS
 - `rofi.nix` - launcher (also used for clipboard history)
 - `dunst.nix` - notifications
